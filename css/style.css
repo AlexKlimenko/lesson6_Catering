@@ -1,0 +1,313 @@
+/*подключение шрифтов*/
+@font-face {
+    font-family: 'lobster_1.4regular';
+    src: url('../fonts/lobsterregular-webfont.eot');
+    src: url('../fonts/lobsterregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lobsterregular-webfont.woff2') format('woff2'),
+         url('../fonts/lobsterregular-webfont.woff') format('woff'),
+         url('../fonts/lobsterregular-webfont.ttf') format('truetype'),
+         url('../fonts/lobsterregular-webfont.svg#lobster_1.4regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensansregular-webfont.eot');
+    src: url('../fonts/opensansregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensansregular-webfont.woff2') format('woff2'),
+         url('../fonts/opensansregular-webfont.woff') format('woff'),
+         url('../fonts/opensansregular-webfont.ttf') format('truetype'),
+         url('../fonts/opensansregular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*GENERAL RESET START*/
+body{
+	background: #fff;
+	margin: 0 auto;
+	font: 14px/1 'open_sansregular', arial, helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6, p{
+	margin: 0;
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+a:hover,
+a:focus,
+a:active,
+a:visited{
+	text-decoration: none;
+}
+ul, ol{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+img{
+	max-width: 100%;
+	border: none;
+}
+input, button, textarea{
+	border: none;
+	outline: none;
+}
+textarea{
+	resize: vertical;
+}
+input[type="submit"], button{
+	cursor: pointer;
+}
+/*GENERAL RESET END*/
+
+/*GENERAL STYLE*/
+.container{  /*перенесли в общие. был в header*/
+	width: 1260px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+.btn{  /*перенесли в общие. был в inline-text a*/
+	display: inline-block; /*чтоб отцентровать "заказать"*/
+	width: 294px;
+	height: 49px; 
+	border: 2px solid #bc2336;
+	font-size: 24px;
+	color: #fff;
+	text-align: center; /*центровка строчно-блочного элемента по горизонтали поцентру*/
+	line-height: 49px; /*центровка строчно-блочного элемента по вертикали поцентру*/
+	text-transform: lowercase;	/*все буквы маленькие. важно при навигации. или если идет пересылка текста из админки*/
+	-webkit-transition: all .3s linear; /*свойство /время изменения /тип изменения*/
+	-o-transition: all .3s linear;
+	transition: all .3s linear;/*плавность перехода в hover*/ /*вендерные префиксы для понимания старыми браузерами*/
+}
+.btn:hover{
+	background: #bc2336;
+}
+.vertical-align::before{
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-left: -4px;
+}
+.vertical-align > *{   /*!!!!!41 минута. разобраться!!!!!!*/
+display: inline-block;
+vertical-align: middle;
+}
+/*HEADER START*/
+header{
+	height: 116px;
+}
+
+.logo{
+	float: left;;
+	margin-top: 11px;
+}
+.header-nav{
+	float: left;
+	margin: 53px 0 0 238px;
+}
+.header-nav li{
+	display: inline-block;
+	}
+.header-nav li + li{
+	margin-left: 18px;
+}
+.header-nav li a{
+	font-size: 18px;
+}
+.social{
+	float: right;
+	margin-top: 45px;
+}
+.social li{
+	display: inline-block;
+}
+.social li+li{
+	margin-left: 32px
+}
+.social li a{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../img/sprite-ikon.png) no-repeat;
+}
+.social li a.vk{
+	background-position: -24px -48px;
+}
+.social li a.twitter{
+	background-position: -24px -24px;
+}
+.social li a.google{
+	background-position: -24px 0px;
+}
+.social li a.vk:hover{
+	background-position: 0px -48px;
+}
+.social li a.twitter:hover{
+	background-position: 0px -24px;
+}
+.social li a.google:hover{
+	background-position: 0px -0px;
+}
+/*HEADER END*/
+
+/*MAIN START*/
+
+.inner{
+	background: url(../img/inner-bg.jpg) no-repeat center;
+	height: calc(100vh - 116px);
+	background-size: cover;
+	text-align: center;
+}
+
+.inner:before, .service-text::before, .service-text a::before, .footer-text::before, .about-us::before{ /*для выравнивания*/
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-left: -4px;
+}
+.inner-text{
+	display: inline-block;
+	vertical-align: middle;
+}
+.inner-text h3{
+	font-size: 60px;
+	color: #fff;
+	font-family: 'lobster_1.4regular';
+	margin-bottom: 17px;
+}
+.inner-text span{
+	font-size: 18px;
+	color: #fff;
+	display: block; /*отцентровать следующий элемент*/
+	margin-bottom: 26px; /*отступ снизу до "заказать"*/
+}
+about-us{
+	height: 218px;
+	display: inline-block;
+	vertical-align: middle;
+	
+}
+.about-us h4{
+	text-align: center;
+	font-size: 30px;
+	color: #000;
+	font-family: 'lobster_1.4regular';
+	margin-bottom: 30px;
+}
+.container p span{
+	display: block;
+	text-align: center;
+}
+
+.services-wrap{
+	padding-top: 50px; /*отступ от inner-bg*/
+}
+.row{
+	margin: 0 -10px; /*чтоб не выпадала 3я каритнка из контейнера (не помещается)*/
+	text-align: center;
+}
+.service{
+	display: inline-block; /*поставить друг за другом*/
+	width: 400px; /*на случай, если поменяют картинки*/
+	margin: 0 10px 40px; /*между сервисами. на row зададим отрицательный отступ*/
+	position: relative;
+}
+.service-text{
+	width: 206px;
+	height: 206px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .85);
+	position: absolute;
+	top: 50%; /*центровка белого круга*/
+	margin-top: -103px;
+	left: 50%;
+	margin-left: -103px;
+	text-align: center; /*на всякий случай. выше задано уже к row*/
+}
+.service-text::before{ /*для выравнивания*/
+	margin-left: -3px;
+}
+.service-text a{
+	display: inline-block;
+	width: 190px;
+	height: 190px;
+	border: 3px solid transparent;
+	border-radius: 50%;
+	vertical-align: middle; /*для выравнивания*/
+}
+.service-text:hover a{
+	border-color: #bc2336;
+	color: #bc2336;
+}
+.service-text a span{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*MAIN END*/
+
+/*FOOTER START*/
+footer{
+	height: 240px;
+	background: #000;
+}
+.footer-text{
+	/*display: inline;*/
+	color: #fff;
+	text-align: center;
+}
+.footer-text h4{
+	margin-top: 20px;
+	font-size: 24px;
+	color: #fff;
+	font-family: 'lobster_1.4regular';
+	margin-bottom: 30px;
+}
+.footer-text span{
+	display: block;
+	width: 100%;
+	color: #fff;
+	margin: 0 0 7px;
+
+}
+.footer-social{
+	/*float: right;*/
+	margin-top: 30px;
+}
+.footer-social li{
+	display: inline-block;
+}
+.footer-social li+li{
+	margin-left: 32px
+}
+.footer-social li a{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../img/sprite-ikon.png) no-repeat;
+}
+.footer-social li a.vk{
+	background-position: -48px -48px;
+}
+.footer-social li a.twitter{
+	background-position: -48px -24px;
+}
+.footer-social li a.google{
+	background-position: -48px 0px;
+}
+.footer-social li a.vk:hover{
+	background-position: 0px -48px;
+}
+.footer-social li a.twitter:hover{
+	background-position: 0px -24px;
+}
+.footer-social li a.google:hover{
+	background-position: 0px -0px;
+
+/*FOOTER END*/
